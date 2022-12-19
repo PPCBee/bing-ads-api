@@ -300,7 +300,7 @@ module BingAdsApi
 		def delete_campaigns(account_id, campaign_ids)
 			message = {
 				:account_id => account_id,
-				:campaign_ids => {"ins1:long" => campaign_ids}
+				:campaign_ids => {"ins0:long" => campaign_ids}
 			}
 			response = call(:delete_campaigns, message)
 			return get_response_hash(response, __method__)
@@ -323,7 +323,7 @@ module BingAdsApi
 		# Raises:: exception
 		def get_targets_by_campaign_ids(campaign_ids)
 			response = call(:get_targets_by_campaign_ids,
-        :campaign_ids => {"ins1:long" => campaign_ids})
+        :campaign_ids => {"ins0:long" => campaign_ids})
 			response_hash = get_response_hash(response, __method__)
       targets = [response_hash[:targets][:target]]
 			return extract_targets(targets)
