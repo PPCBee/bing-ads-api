@@ -47,5 +47,12 @@ require 'bing-ads-api/data/reporting/budget_summary_report_request'
 # Author:: jlopezn@neonline.cl
 module BingAdsApi
 
+  def self.unescape_html
+    @unescape_html
+  end
+
+  def self.unescape_html=(val)
+    @unescape_html = val
+  end
 
 end

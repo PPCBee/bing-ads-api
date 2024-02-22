@@ -96,7 +96,11 @@ module BingAdsApi
 				LOGGER.debug "\t#{response.header}"
 
 				LOGGER.info "Operation #{operation.to_s} call success"
-				return response.full_hash
+        if BingAdsApi.unescape_html
+          return response.full_hash.deep_transform_values { |value| value.is_a?(String) ? CGI.unescapeHTML(value) : value}
+        else
+          return response.full_hash
+        end
 			rescue Savon::SOAPFault => error
 				LOGGER.error "SOAP Error calling #{operation.to_s}: #{error.http.code}"
 				fault_detail = error.to_hash[:fault][:detail]
