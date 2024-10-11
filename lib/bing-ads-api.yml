@@ -159,6 +159,8 @@ constants:
       campaign_negative_keyword_list: "CampaignNegativeKeywordList"
       expanded_text_ad: "ExpandedTextAds"
       responsive_search_ad: "ResponsiveSearchAds"
+      ad_customizer_attribute: "AdcustomizerAttribute"
+      ad_group_ad_customizer_attribute: "AdGroupAdcustomizerAttribute"
     download_file_type:
       csv: 'Csv'
       tsv: 'Tsv'
